@@ -67,7 +67,6 @@ reviewController.getReviewAverage = async(req,res) => {
             totalReviewRating += rev.rating;
         })
         
-        console.log("AQUI", totalReviewRating, reviewCount)
         const reviewMedia = totalReviewRating / reviewCount
 
         return res.status(200).json({

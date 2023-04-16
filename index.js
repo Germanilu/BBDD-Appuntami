@@ -35,7 +35,7 @@ const port = process.env.PORT || 4000;
 
 //Creo una ruta de bienvenida
 app.get('/' , (req,res) => {   
-    return res.send('BBD Obras ')
+    return res.send('BBDD Appuntami')
 });
 
 //Si no encuentra la ruta devuelvo un 404
