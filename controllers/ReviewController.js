@@ -59,7 +59,6 @@ reviewController.getReviewAverage = async(req,res) => {
 
     try {
         const review = await Review.find()
-        // console.log(review)
         let totalReviewRating = 0;
         let reviewCount = 0
         review.map((rev) => {
