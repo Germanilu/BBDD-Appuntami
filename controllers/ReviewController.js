@@ -70,7 +70,7 @@ reviewController.getReviewAverage = async(req,res) => {
 
         return res.status(200).json({
             success:true,
-            reviewMedia: reviewMedia
+            data: reviewMedia
         })
     } catch (error) {
         return res.status(500).json({
