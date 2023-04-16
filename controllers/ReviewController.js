@@ -43,7 +43,7 @@ reviewController.getReview = async(req,res) => {
 
         return res.status(200).json({
             success:true,
-            review:review
+            data:review
         })
     } catch (error) {
         return res.status(500).json({
