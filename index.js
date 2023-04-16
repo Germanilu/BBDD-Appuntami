@@ -23,25 +23,21 @@ app.use('/api',reviewRoutes);
 
 //Cors
 const cors = require('cors');
-let corsOptions = {    origin: "*",    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",     methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",    preflightContinue: false,     allowedHeaders: "Origin,X-Requested-With,Content-Type,Accept,Authorization",    optionsSuccessStatus: 204};
-
+const corsOptions = 
+{
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+    preflightContinue: false,
+    allowedHeaders: "Origin,X-Requested-With,Content-Type,Accept,Authorization",
+    optionsSuccessStatus: 204,
+};
 //Request to app to use cors
 app.use(cors(corsOptions));
 
 //Seteo el puerto utilizando la variable de entorno PORT o si no la encuentra la 4000
 const port = process.env.PORT || 4000;
 
-
-
-//Creo una ruta de bienvenida
-app.get('/' , (req,res) => {   
-    return res.send('BBDD Appuntami')
-});
-
-//Si no encuentra la ruta devuelvo un 404
-app.get('*', (req,res) => {
-    return res.status(404).send('404 Route not found')
-})
 
 //Aqui dependiendo del resultado anterior me devuelve en consola si esta conectado y a que puerto o me da un error
 db().then(() => {
