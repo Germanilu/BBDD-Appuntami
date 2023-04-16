@@ -1,5 +1,5 @@
-const app                           = express()
 const express                       = require('express')
+const app                           = express()
 const db                            = require('./config/db')
 const cors                          = require('cors');
 const corsOptions                   = require("./libs/cors");
